@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://enemys/Tree.gd" type="Script" id=1]
+[ext_resource path="res://assets/Tree.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 119.134
+height = 227.438
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 57.7365
+
+[node name="Enemy" type="KinematicBody2D"]
+position = Vector2( 0, -3.8147e-06 )
+scale = Vector2( 0.536922, 0.538621 )
+collision_layer = 5
+collision_mask = 7
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 25.0046, -176.541 )
+scale = Vector2( 8.92969, 8.92969 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( -0.816803, -34.4922 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -97.4733 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -3.05176e-05, 33.4186 )
+scale = Vector2( 1.17037, 0.296826 )
+shape = SubResource( 3 )
